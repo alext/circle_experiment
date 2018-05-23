@@ -1,8 +1,6 @@
 # CircleExperiment
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/circle_experiment`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is a dummy gem for me to experiment with CircleCI workflows etc.
 
 ## Installation
 
@@ -22,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+CircleExperiment::Experiment.hello
+```
 
 ## Development
 
@@ -32,4 +32,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/circle_experiment.
+Bug reports and pull requests are welcome on GitHub at https://github.com/alext/circle_experiment.
