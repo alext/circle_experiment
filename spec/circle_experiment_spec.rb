@@ -4,6 +4,6 @@ RSpec.describe CircleExperiment do
   end
 
   it "does something useful" do
-    expect(false).to eq(true)
+    expect(CircleExperiment::Experiment.hello).to eq("hello")
   end
 end
