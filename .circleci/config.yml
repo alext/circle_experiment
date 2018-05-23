@@ -26,6 +26,20 @@ jobs:
     <<: *test_defaults
     docker:
       - image: circleci/ruby:2.3
+  publish:
+    docker:
+      - image: circleci/ruby:2.5
+    working_directory: ~/repo
+    steps:
+      - run:
+          name: Setup Rubygems
+          command: .circleci/setup_rubygems.sh
+      - checkout
+      - run:
+          name: Publish to Rubygems
+          command: |
+            gem build circle_experiment.gemspec
+            gem push "circle_experiment-$(git describe --tags).gem"
 
 workflows:
   version: 2
@@ -34,3 +48,13 @@ workflows:
       - "ruby-2.5"
       - "ruby-2.4"
       - "ruby-2.3"
+      - publish:
+          requires:
+            - "ruby-2.5"
+            - "ruby-2.4"
+            - "ruby-2.3"
+          filters:
+            tags:
+              only: /v.*/
+            branches:
+              ignore: /.*/
