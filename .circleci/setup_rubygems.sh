@@ -7,4 +7,4 @@ cat <<EOT > ~/.gem/credentials
 ---
 :rubygems_api_key: ${RUBYGEMS_API_KEY}
 EOT
-chmod 0600 /home/circleci/.gem/credentials
+chmod 0600 ~/.gem/credentials
