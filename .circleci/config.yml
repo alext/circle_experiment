@@ -31,10 +31,10 @@ jobs:
       - image: circleci/ruby:2.5
     working_directory: ~/repo
     steps:
+      - checkout
       - run:
           name: Setup Rubygems
           command: .circleci/setup_rubygems.sh
-      - checkout
       - run:
           name: Publish to Rubygems
           command: |
