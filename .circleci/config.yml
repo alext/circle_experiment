@@ -38,8 +38,9 @@ jobs:
       - run:
           name: Publish to Rubygems
           command: |
+            set -u
             gem build circle_experiment.gemspec
-            gem push "circle_experiment-$(git describe --tags).gem"
+            gem push "circle_experiment-${CIRCLE_TAG#v}.gem"
 
 workflows:
   version: 2
