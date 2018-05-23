@@ -1,7 +1,6 @@
 version: 2
 meta:
   test_defaults: &test_defaults
-    working_directory: ~/repo
     steps:
       - checkout
       - run:
@@ -29,7 +28,6 @@ jobs:
   publish:
     docker:
       - image: circleci/ruby:2.5
-    working_directory: ~/repo
     steps:
       - checkout
       - run:
